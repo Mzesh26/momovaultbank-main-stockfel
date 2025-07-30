@@ -16,6 +16,11 @@ const withdrawRoutes = require("./routes/vault-routes/withdraw.js");
 const userVaultInfoRoutes = require("./routes/api-routes/user-vault-info.js");
 const adminRoutes = require("./routes/admin-routes/admin.js");
 
+// Savings Groups routes
+const savingsGroupsRoutes = require("./routes/savings-groups-routes/savings-groups.js");
+const groupMembershipRoutes = require("./routes/savings-groups-routes/group-membership.js");
+const groupContributionsRoutes = require("./routes/savings-groups-routes/group-contributions.js");
+
 //Disbursement routes
 
 // Import mobile money routes
@@ -56,6 +61,11 @@ app.use("/api", vaultRoutes);
 app.use("/api", withdrawRoutes);
 app.use("/api", userVaultInfoRoutes);
 app.use("/api/admin", adminRoutes);
+
+// Savings Groups Routes
+app.use("/api/savings-groups", savingsGroupsRoutes);
+app.use("/api/savings-groups", groupMembershipRoutes);
+app.use("/api/savings-groups", groupContributionsRoutes);
 
 // Disbursement Routes
 
